@@ -1,4 +1,7 @@
 #!/bin/bash
+#this script uses 2 arrays extracted from 2 txt files to batch rename every part which contains a name from the second array to the
+#corresponding name in the first array. For this, it uses perl regex. 
+
 declare -a array=($(cat list_ids.txt | tr '\n' ' '))
 declare -a array2=($(cat namelist3.txt | tr '\n' ' '))
 
