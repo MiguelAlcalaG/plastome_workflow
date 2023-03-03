@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[26]:
-
-
 import os
 import subprocess
 
@@ -11,8 +8,16 @@ print("This script compares two plastome annotations from two .tsv files")
 
 os.chdir("/home/epidendrum/Downloads")
 
-nameoffile1 = input()
-nameoffile2 = input()
+nameoffile1 = ""
+nameoffile2 = ""
+
+if nameoffile1 == "":
+    nameoffile1 = input()
+    print("Input name of first file:")
+    
+if nameoffile2 == "":
+    print("Input name of second file:")
+    nameoffile2 = input() 
 
 command1 = "awk '{print $1}' " + nameoffile1 + " > file1.txt"
 command2 = "awk '{print $1}' " + nameoffile2 + " > file2.txt"
@@ -33,4 +38,3 @@ print("Hace falta en el segundo archivo en referencia al primero")
 print(list(set(list1)-set(list2)))
 print("Hace falta en el primer archivo en referencia al segundo")
 print(list(set(list2)-set(list1)))
-
