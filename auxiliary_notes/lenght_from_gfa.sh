@@ -1,5 +1,6 @@
 #!/bin/bash
-
+## This script extracts the lenght of the LSC, IR and SSC from a gfa file, obtained from a getorganelle assembly of a chloroplast
+## lenghts.csv, the final result, is unsorted for now. It is recommended to use large function in google sheets to order it.
 
 ## generate temporary file "namelist_gfas.txt" with the paths to every gfa file from namelist.txt
 while read name; do ls $name/go_$name/embplant_pt.K*.complete.graph1.selected_graph.gfa >> namelist_gfas.txt; done < namelist.txt
